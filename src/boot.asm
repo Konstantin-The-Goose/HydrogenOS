@@ -5,12 +5,10 @@ main:
     ; save boot drive
     mov [boot_drive], dl
 
-    ; set segments
+    ; set segments (CORRECT)
     xor ax, ax
     mov ds, ax
     mov es, ax
-
-    ; stack
     mov ss, ax
     mov sp, 0x7c00
 
@@ -30,7 +28,7 @@ main:
 
 disk_error:
     mov ah, 0x0E
-    mov al, 'E' ; efficient error handling 😭
+    mov al, 'E' ; tuff error handling
     int 0x10
     jmp $
 
