@@ -29,7 +29,7 @@ main:
     jmp 0x0000:0x1000
 
 disk_error:
-    mov ah 0x0E
+    mov ah, 0x0E
     mov al, 'E' ; efficient error handling 😭
     int 0x10
     jmp $
