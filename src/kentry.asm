@@ -1,7 +1,10 @@
-bits 16 
-org 0x1000
+[bits 32]
 
+global _start
 extern kernel_main
-call kernel_main
 
-jmp $
+_start:
+    call kernel_main
+
+hang:
+    jmp hang
